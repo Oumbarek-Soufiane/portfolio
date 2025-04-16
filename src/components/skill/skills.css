@@ -1,0 +1,297 @@
+/* Neobrutalism Skills Component CSS */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.skills-section {
+  padding: 3rem 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+/* Header Styling */
+.skills-header {
+  position: relative;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--title-color);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.skills-decoration {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffde59;
+  transform: rotate(15deg);
+  z-index: -1;
+  border: 3px solid rgb(243, 162, 56);
+}
+
+.skills-header h1{
+    color: var(--title-color);
+   
+}
+
+
+/* Tab Styling */
+.skills-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  background: none;
+  border: 3px solid rgb(243, 162, 56);
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--container-color);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 rgb(243, 162, 56,0.8);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  color: var(--title-color);
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 162, 56);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.tab-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 rgb(243, 162, 56,0.8);
+  color: rgb(243, 162, 56);
+}
+
+.tab-button:hover::before {
+  transform: translateY(90%);
+}
+
+.tab-button.active {
+  background-color: rgb(243, 162, 56);
+  color: white;
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 rgb(243, 162, 56,0.8);
+}
+
+.tab-button.active::before {
+  transform: translateY(0);
+}
+
+.tab-underline {
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active .tab-underline {
+  background-color: rgb(255, 123, 0);
+}
+
+/* Category Styling */
+.skills-category {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.category-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 1rem;
+  background-color: var(--container-color);
+  color: var(--title-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 rgb(243, 162, 56,0.8);
+}
+
+.category-line {
+  flex-grow: 1;
+  height: 0.25rem;
+  background-color: rgb(243, 162, 56);
+  position: relative;
+}
+
+.category-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgb(243, 162, 56);
+  transform: rotate(45deg);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Skill Card */
+.skill-card {
+  background-color: var(--container-color);
+  cursor: pointer;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 0 rgb(243, 162, 56);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--skill-color, #000);
+}
+
+.skill-card:hover {
+  transform: translate(5px, 5px);
+  box-shadow: 2px 2px 0 rgb(243, 162, 56,0.6);
+}
+
+.skill-icon-container {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--skill-color, #000);
+  transition: transform 0.2s ease;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.skill-card:hover .skill-icon-container {
+  transform: scale(1.1);
+}
+
+.skill-name {
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Custom SVG Icon */
+.custom-svg-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: currentColor;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skills-title {
+    font-size: 2.5rem;
+  }
+  
+  .category-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .skills-tabs {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skill-card {
+    padding: 1rem 0.5rem;
+  }
+  
+  .skill-icon-container {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Animation for Extra Pop */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.skill-card:active {
+  animation: pop 0.3s ease;
+}
