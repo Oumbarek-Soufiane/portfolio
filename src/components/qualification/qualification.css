@@ -25,9 +25,13 @@
     border-bottom: 1px solid rgba(243,162,56);
 }
 
+.qualification__button{
+    border-bottom: solid 1px black;
+}
+
 .qualification__icon{
     font-size: 1.8rem;
-    margin-right: var(--mb-0-25)
+    margin-right: var(--mb-0-25);
 }
 
 .qualification__active{
