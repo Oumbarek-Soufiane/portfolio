@@ -49,8 +49,12 @@ const Contact = () => {
             </div>
           </div>
 
+<<<<<<< HEAD
        
         </div>
+=======
+         
+>>>>>>> cd0d193e0a84f6389c0e7f879c991e6961185d56
 
         <div className="form__container">
           <h4>Write me your project</h4>
