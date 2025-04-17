@@ -3,6 +3,7 @@ import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
 import serviceImg4 from "../../assets/work5.png";
+import serviceImg4 from "../../assets/screen.png";
 import "./services.css";
 const Services = () => {
   return (
@@ -55,6 +56,16 @@ const Services = () => {
           <h2>Chefchaoun Project</h2>
           <p> « Professional Composition Using Adobe Photoshop </p>
           <a download="" href={serviceImg4}>
+            <i class="bx bxs-share"></i>
+          </a>
+        </div>
+          <div className="service__offer">
+          <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2">
+            <img src={serviceImg2} alt="service3" className="service__3" />
+          </a>
+          <h2>Hackathon Project</h2>
+          <p> «Smart Garbage Using Arduino And C++ Language </p>
+          <a href="https://github.com/Oumbarek-Soufiane/project-hackathon">
             <i class="bx bxs-share"></i>
           </a>
         </div>
