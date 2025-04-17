@@ -24,7 +24,7 @@ const Contact = () => {
               <p>soufianeoump6@gmail.com</p>
             </div>
             <div className="contact__icon">
-              <a href="mailto:soufinaeoump6@gmail.com" className="contact__button" href="">
+              <a href="mailto:soufianeoump6@gmail.com" className="contact__button" >
                 Write Me{" "}
                 <i className="contact__button-icon uil uil-arrow-right"></i>
               </a>
@@ -49,23 +49,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="messenger__container">
-            <div>
-              <i class="fa-brands fa-facebook-messenger"></i>
-            </div>
-            <div>
-              <p className="contact__title">Messenger</p>
-            </div>
-            <div>
-              <p>Sofyan Kl</p>
-            </div>
-            <div>
-              <a href="" className="contact__button">
-                Write Me{" "}
-                <i className="contact__button-icon uil uil-arrow-right"></i>{" "}
-              </a>
-            </div>
-          </div>
+       
         </div>
 
         <div className="form__container">
