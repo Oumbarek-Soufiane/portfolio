@@ -1,5 +1,6 @@
 import react from 'react'
 import './App.css';
+import sal from 'sal.js'
 import Header from './components/header/header';
 import Home from './components/home/home';
 import Skills from "./components/skill/Skills";

@@ -46,13 +46,43 @@
 }
 
 .about__subtitle{
-    font-size: 0.62rem;
+    font-size: 0.60rem;
 }
 
 .about__description{
     padding: 0 4rem 0 0;
     margin-bottom: var(--mb-2-5);
 }
+
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add staggered delays for footer elements */
+  .about__titles.fade-up {
+    transition-delay: 0.1s;
+  }
+  
+  .about__subtitles.fade-up {
+    transition-delay: 0.2s;
+  }
+  
+  .about__datase.fade-up {
+    transition-delay: 0.3s;
+  }
+
+  .info__datas {
+    transition-delay: 0.4s;
+  }
+  
 
 
 

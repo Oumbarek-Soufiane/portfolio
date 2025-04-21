@@ -81,6 +81,42 @@
     color: var(--service-color-icon);
 }
 
+/* Add these animation styles to your services.css file */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add a staggered delay to the service offers */
+  .service__offer:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  .service__offer:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  .service__offer:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  .service__offer:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  
+  .service__offer:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
+
+
 @media screen and (max-width: 1100px) {
     .service__offers{
        display: grid;

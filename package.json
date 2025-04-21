@@ -21,6 +21,7 @@
     "primereact": "^10.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sal.js": "^0.8.5",
     "styled-components": "^6.1.15",
     "tailwindcss": "^4.0.7"
   },

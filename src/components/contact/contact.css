@@ -131,6 +131,32 @@ font-size: var(--small-font-size);
     resize: none;
 }
 
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add staggered delays for footer elements */
+  
+  .contact__title.fade-up {
+    transition-delay: 0.2s;
+  }
+  
+  .contact__subtitle.fade-up {
+    transition-delay: 0.3s;
+  }
+  
+  .contact__links.fade-up {
+    transition-delay: 0.4s;
+  }
+
+
 
 @media screen and (max-width: 992px) {
     .contact__container{

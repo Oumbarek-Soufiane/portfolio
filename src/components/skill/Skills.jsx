@@ -1,8 +1,52 @@
-import React, { useState } from "react";
+import  { React, useRef, useState,useEffect } from "react";
 import "./skills.css";
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState("frontend");
+
+  const skillsTitleRef = useRef(null);
+      const skillsbackendtab = useRef(null);
+      const skillsfrontendtab = useRef(null);
+      useEffect(() => {
+        // Set up the Intersection Observer
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.15,
+        };
+    
+        const handleIntersect = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add the fade-in class when the element is visible
+              entry.target.classList.add("fade-show");
+              // Stop observing after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+    
+        const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+        // Observe footer elements
+        const elements = [
+          skillsTitleRef.current,
+          skillsbackendtab.current,
+          skillsfrontendtab.current,
+        ];
+    
+        elements.forEach(element => {
+          if (element) observer.observe(element);
+        });
+    
+        return () => {
+          // Clean up
+          elements.forEach(element => {
+            if (element) observer.unobserve(element);
+          });
+        };
+      }, []);
+   
 
   const frontendSkills = [
     { name: "HTML", icon: "uil uil-html5", color: "#FF5733" },
@@ -40,11 +84,11 @@ const Skills = () => {
   return (
     <div className="skills-section" id="skills">
       <div className="skills-header">
-        <h1 className="skills-title">Skills</h1>
+        <h1 className="skills-title skills__title  fade-up" ref={skillsTitleRef}>Skills</h1>
         <div className="skills-decoration"></div>
       </div>
 
-      <div className="skills-tabs">
+      <div className="skills-tabs ">
         <button 
           className={`tab-button ${activeTab === "frontend" ? "active" : ""}`} 
           onClick={() => handleTabClick("frontend")}
@@ -63,7 +107,7 @@ const Skills = () => {
 
       <div className="skills-container">
         {activeTab === "frontend" && (
-          <div className="skills-category">
+          <div className="skills-category " >
             <div className="category-header">
               <h2>Frontend</h2>
               <div className="category-line"></div>
@@ -99,7 +143,7 @@ const Skills = () => {
         )}
 
         {activeTab === "backend" && (
-          <div className="skills-category">
+          <div className="skills-category  "  >
             <div className="category-header">
               <h2>Backend</h2>
               <div className="category-line"></div>

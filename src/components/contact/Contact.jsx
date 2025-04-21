@@ -1,18 +1,62 @@
-import React from 'react';
+import {React,useEffect,useRef} from 'react';
 import "./contact.css";
 
 const Contact = () => {
+
+  const conatctTitleRef = useRef(null);
+    const contactsubtitleRef = useRef(null);
+    const contactlinksRef = useRef(null);
+  
+    useEffect(() => {
+      // Set up the Intersection Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+      };
+  
+      const handleIntersect = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the fade-in class when the element is visible
+            entry.target.classList.add("fade-show");
+            // Stop observing after animation is triggered
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+  
+      const observer = new IntersectionObserver(handleIntersect, observerOptions);
+  
+      // Observe footer elements
+      const elements = [
+        conatctTitleRef.current,
+        contactsubtitleRef.current,
+        contactlinksRef.current,
+      ];
+  
+      elements.forEach(element => {
+        if (element) observer.observe(element);
+      });
+  
+      return () => {
+        // Clean up
+        elements.forEach(element => {
+          if (element) observer.unobserve(element);
+        });
+      };
+    }, []);
  
   return (
     <>
   
     <section className="contact section  container" id="contact">
-      <h2 className="section__title">Contact</h2>
-      <span className="section__subtitle">Get In Touch</span>
+      <h2 className="section__title contact__title fade-up" ref={conatctTitleRef}>Contact</h2>
+      <span className="section__subtitle contact__subtitle fade-up" ref={contactsubtitleRef}>Get In Touch</span>
 
-      <div className="contact__container">
+      <div className="contact__container contact__links fade-up" ref={contactlinksRef}>
         <div className="talk__me">
-          <h4>Talk To Me</h4>
+          <h4 >Talk To Me</h4>
           <div className="mail__container">
             <div>
               <i class="bx bx-mail-send"></i>

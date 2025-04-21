@@ -121,6 +121,31 @@
   animation: fadeIn 0.5s ease;
 }
 
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add staggered delays for footer elements */
+
+.skills__title.fade-up {
+  transition-delay: 0.2s;
+}
+
+.skills__frontend.fade-up {
+  transition-delay: 0.3s;
+}
+
+.skills__backend.fade-up {
+  transition-delay: 0.4s;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -1,26 +1,73 @@
-import react from "react";
+import {React,useRef,useEffect} from "react";
 import "./about.css";
 import CV from "../../assets/cv_soufiane.pdf";
 import Info from "./Info";
 const About = () => {
+
+  const aboutTitleRef = useRef(null);
+  const aboutSubtitleRef = useRef(null);
+  const aboutDataRef = useRef(null);
+  const aboutrefinf = useRef(null);
+
+  useEffect(() => {
+    // Set up the Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15,
+    };
+
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the fade-in class when the element is visible
+          entry.target.classList.add("fade-show");
+          // Stop observing after animation is triggered
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    // Observe footer elements
+    const elements = [
+      aboutTitleRef.current,
+      aboutSubtitleRef.current,
+      aboutDataRef.current,
+      aboutrefinf.current
+    ];
+
+
+    elements.forEach(element => {
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      // Clean up
+      elements.forEach(element => {
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
   return (
     <div className="about section  " id="about">
-      <h2 className="section__title">About Me</h2>
-      <span className="section__subtitle">My introduction</span>
+      <h2 className="section__title about__titles fade-up" ref={aboutTitleRef}>About Me</h2>
+      <span className="section__subtitle about__subtitles fade-up" ref={aboutSubtitleRef}>My introduction</span>
 
       <div className="about__container container grid">
         
-        <div className="about__data">
-          <Info />
+        <div className="about__data ">
+          <Info  />
 
-          <p className="about__description">
+          <p className="about__description about__datase fade-up" ref={aboutDataRef}>
             Frontend and Backend developer, I create web pages with UI / UX user
             interface and dealing with databases, I have years of experience and
             many clients are happy with the projects carried out.
           </p>
 
-          <a download="" href={CV} className="button button--flex">
-            Download Cv
+          <a download=""  href={CV} className="button button--flex">
+           Download Cv
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="button__icon"
@@ -47,6 +94,7 @@ const About = () => {
               />
             </svg>
           </a>
+        
         </div>
       </div>
     </div>
@@ -54,3 +102,6 @@ const About = () => {
 };
 
 export default About;
+
+
+

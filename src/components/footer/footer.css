@@ -14,6 +14,35 @@
   
 }
 
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add staggered delays for footer elements */
+  .footer__title.fade-up {
+    transition-delay: 0.1s;
+  }
+  
+  .footer__list.fade-up {
+    transition-delay: 0.2s;
+  }
+  
+  .footer__social.fade-up {
+    transition-delay: 0.3s;
+  }
+  
+  .footer__copy.fade-up {
+    transition-delay: 0.4s;
+  }
+
 .footer__title{
     text-align: center;
     margin-bottom: var(--mb-2);

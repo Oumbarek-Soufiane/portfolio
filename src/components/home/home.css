@@ -12,6 +12,25 @@
     align-items: center;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.home__nh.fade-up{
+    animation-delay: 0.5s;
+}
+  
+.fade-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home__image.fade-up{
+    animation-delay: 0.1s;
+}
+
 .home__img{
     background: url(../../assets/portfol.png);
     background-repeat: no-repeat;
@@ -134,6 +153,7 @@
     max-width: 400px;
     margin-bottom: var(--mb-3);
 }
+
 
 
 @media screen and (max-width: 992px) {
