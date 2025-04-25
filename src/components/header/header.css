@@ -29,18 +29,13 @@
     font-weight: var(--font-medium);
 }
 
-.header__glow{
-  background: url(../../assets/glow.png);
-  width: 80px;
-  height: 80px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: -1000000000;
-  opacity: 1;
-  position: absolute;
-  left: -30px;
-  top: -27px;
+.masked_text{
+  font-size: 1.2rem;
+  background: url(../../assets/glow1.jpg);
+  background-size: contain;
+  background-position: center 50%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .nav__list{

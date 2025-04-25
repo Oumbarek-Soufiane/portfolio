@@ -4,6 +4,7 @@ import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
 import serviceImg4 from "../../assets/work5.png";
 import serviceImg5 from "../../assets/screen.png";
+import serviceImg6 from "../../assets/work6.png"
 import "./services.css";
 
 const Services = () => {
@@ -121,6 +122,18 @@ const Services = () => {
           </a>
           <h2>UX / UI Projet</h2>
           <p> «Projet Plate Forme Musicale ( Figma ) </p>
+          <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
+            <i className="bx bxs-share"></i>
+          </a>
+        </div>
+
+
+        <div className="service__offer fade-up" ref={addToRefs}>
+          <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
+            <img src={serviceImg6} alt="service5" className="service__3" />
+          </a>
+          <h2>UX / UI Projet</h2>
+          <p> «Projet Achat Médicament Urgent ( Figma ) </p>
           <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>

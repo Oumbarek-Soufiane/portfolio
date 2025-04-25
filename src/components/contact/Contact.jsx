@@ -1,11 +1,16 @@
 import {React,useEffect,useRef} from 'react';
 import "./contact.css";
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
 
   const conatctTitleRef = useRef(null);
     const contactsubtitleRef = useRef(null);
     const contactlinksRef = useRef(null);
+    const sendEmail = (e) =>{
+      e.preventDefault();
+      emailjs.sendForm('service_hkua95m','template_6kdp65e',e.target,'rtqr-ns5mzP3qMk2p')
+    }
   
     useEffect(() => {
       // Set up the Intersection Observer
@@ -82,7 +87,6 @@ const Contact = () => {
             <div>
               <p className="contact__title">Whatssap</p>
             </div>
-           
             <div>
               <a href="https://api.whatssap.com/send?phone=+212652608908&text=Hello, more information!" className="contact__button " href="">
                 Write Me{" "}
@@ -96,10 +100,10 @@ const Contact = () => {
 
         <div className="form__container">
           <h4>Write me your project</h4>
-         <form className="contact__form">
+         <form className="contact__form" onSubmit={sendEmail}>
                <div className="contact__form-div">
                   <label htmlFor="contact__form-tag">Name</label>
-                  <input type="text" name="text" 
+                  <input type="text" name="name" 
                   className="contact__form-input"
                   placeholder="Insert your name"/>
                </div>
@@ -115,7 +119,7 @@ const Contact = () => {
 
                <div className="contact__form-div  contact__form-area">
                   <label htmlFor="contact__form-tag">Project</label>
-                  <textarea cols="30" rows="10" name="text" 
+                  <textarea cols="30" rows="10" name="message" 
                   className="contact__form-input"
                   placeholder="Insert your project"/>
                </div>
