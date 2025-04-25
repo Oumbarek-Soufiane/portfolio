@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
@@ -11,7 +11,7 @@ const Services = () => {
   const serviceItemsRef = useRef([]);
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Reset refs array when filter changes
     serviceItemsRef.current = [];
     
@@ -45,7 +45,7 @@ const Services = () => {
       serviceItemsRef.current.forEach((item) => {
         if (item) observer.observe(item);
       });
-    }, 100);
+    }, 50);
 
     return () => {
       // Clean up
