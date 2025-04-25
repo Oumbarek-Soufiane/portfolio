@@ -1,5 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./header.css";
+
 const Header = () => {
   const [Toggle, showMenu] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -22,56 +24,60 @@ const Header = () => {
     }, 400); // Matches animation duration
   };
 
+  // Fermer le menu après avoir cliqué sur un lien (pour mobile)
+  const closeMenu = () => {
+    showMenu(false);
+  };
+
   return (
     <header className="header">
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">
-        <h1 class="masked_text">Soufiane</h1> 
-        </a>
+        <NavLink to="/portfolio" className="nav__logo">
+          <h1 className="masked_text">Soufiane</h1>
+        </NavLink>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
-              <a href="#home" className="nav__link active-link">
+              <NavLink to="/portfolio" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-estate nav__icon"></i>
                 Home
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav__item">
-              <a href="#about" className="nav__link">
+              <NavLink to="/about" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-user nav__icon"></i>
                 About
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav__item">
-              <a href="#skills" className="nav__link">
+              <NavLink to="/skills" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-file-alt nav__icon"></i>
                 Skills
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav__item">
-              <a href="#works" className="nav__link">
+              <NavLink to="/works" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-briefcase-alt nav__icon"></i>
                 Works
-              </a>
+              </NavLink>
             </li>
 
-
             <li className="nav__item">
-              <a href="#qualification" className="nav__link">
-              <i class="uil uil-award nav__icon"></i>
+              <NavLink to="/qualification" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+                <i className="uil uil-award nav__icon"></i>
                 Qualification
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav__item">
-              <a href="#contact" className="nav__link">
-              <i class="uil uil-message nav__icon"></i>
+              <NavLink to="/contact" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+                <i className="uil uil-message nav__icon"></i>
                 Contact
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav_item">
@@ -91,14 +97,12 @@ const Header = () => {
                   }`}
                 ></i>
               </a>
-
               <style jsx>{`
-            
                 /* Rotation animation */
                 .rotate-animation {
                   animation: rotateIcon 0.4s ease-in-out;
                 }
-
+                
                 @keyframes rotateIcon {
                   0% {
                     transform: rotate(0deg);
@@ -123,4 +127,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;

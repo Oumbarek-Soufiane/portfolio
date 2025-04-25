@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
@@ -60,6 +61,58 @@ const Services = () => {
     }
   };
 
+  // Service items data with IDs
+  const serviceItems = [
+    {
+      id: "1",
+      title: "School Management",
+      image: serviceImg,
+      desc: "«Institution Academic Connect: Your Gateway to Crea-tivity and Innovation",
+      projectUrl: "https://github.com/Oumbarek-Soufiane/Aim_App",
+      type: "site web"
+    },
+    {
+      id: "2",
+      title: "School Management",
+      image: serviceImg1,
+      desc: "«Institution Academic Connect: Your Gateway to Crea-tivity and Innovation El karama Boussaid",
+      projectUrl: "https://github.com/Oumbarek-Soufiane/School_Elkarama_App",
+      type: "site web"
+    },
+    {
+      id: "3",
+      title: "Hackathon Project",
+      image: serviceImg2,
+      desc: "«Smart Garbage Using Arduino And C++ Language",
+      projectUrl: "https://github.com/Oumbarek-Soufiane/project-hackathon",
+      type: "Arduino"
+    },
+    {
+      id: "4",
+      title: "Chefchaoun Project",
+      image: serviceImg4,
+      desc: "« Professional Composition Using Adobe Photoshop",
+      projectUrl: serviceImg4,
+      type: "Illustartion"
+    },
+    {
+      id: "5",
+      title: "UX / UI Projet",
+      image: serviceImg5,
+      desc: "«Projet plateForme de musique avec chat dierct ! ( Figma )",
+      projectUrl: "https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2",
+      type: "site web"
+    },
+    {
+      id: "6",
+      title: "UX / UI Projet",
+      image: serviceImg6,
+      desc: "«Projet Achat Médicament Urgent En ligne !  ( Figma )",
+      projectUrl: "https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22",
+      type: "application mobile"
+    }
+  ];
+
   return (
     <div className="works section" id="works">
       <div className="works__header fade-up" ref={worksRef}>
@@ -68,82 +121,23 @@ const Services = () => {
       </div>
 
       <div className="service__offers">
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <a href="https://github.com/Oumbarek-Soufiane/Aim_App">
-            <img src={serviceImg} alt="service1" className="service__1" />
-          </a>
-          <h2>School Management</h2>
-          <p>
-            «Institution Academic Connect: Your Gateway to Crea-tivity and
-            Innovation
-          </p>
-          <a href="https://github.com/Oumbarek-Soufiane/Aim_App">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">site web</p>
-        </div>
-
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <a href="https://github.com/Oumbarek-Soufiane/School_Elkarama_App" target="_blank" rel="noreferrer">
-            <img src={serviceImg1} alt="service2" className="service__2" />
-          </a>
-          <h2>School Management</h2>
-          <p>
-            «Institution Academic Connect: Your Gateway to Crea-tivity and
-            Innovation El karama Boussaid
-          </p>
-          <a href="https://github.com/Oumbarek-Soufiane/School_Elkarama_App" target="_blank" rel="noreferrer">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">site web</p>
-        </div>
-
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <a href="https://github.com/Oumbarek-Soufiane/project-hackathon" target="_blank" rel="noreferrer">
-            <img src={serviceImg2} alt="service3" className="service__3" />
-          </a>
-          <h2>Hackathon Project</h2>
-          <p> «Smart Garbage Using Arduino And C++ Language </p>
-          <a href="https://github.com/Oumbarek-Soufiane/project-hackathon" target="_blank" rel="noreferrer">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">Arduino</p>
-        </div>
-
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <img src={serviceImg4} alt="service4" className="service__4" />
-          <h2>Chefchaoun Project</h2>
-          <p> « Professional Composition Using Adobe Photoshop </p>
-          <a download="" href={serviceImg4} target="_blank" rel="noreferrer">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">Illustartion</p>
-        </div>
-
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
-            <img src={serviceImg5} alt="service5" className="service__3" />
-          </a>
-          <h2>UX / UI Projet</h2>
-          <p> «Projet plateForme de musique avec chat dierct ! ( Figma ) </p>
-          <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">site web</p>
-        </div>
-
-
-        <div className="service__offer fade-up" ref={addToRefs}>
-          <a href="https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22" target="_blank" rel="noreferrer">
-            <img src={serviceImg6} alt="service5" className="service__3" />
-          </a>
-          <h2>UX / UI Projet</h2>
-          <p> «Projet Achat Médicament Urgent En ligne !  ( Figma ) </p>
-          <a href="https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22" target="_blank" rel="noreferrer">
-            <i className="bx bxs-share"></i>
-          </a>
-          <p className="type">application mobile</p>
-        </div>
+        {serviceItems.map((item) => (
+          <div className="service__offer fade-up" ref={addToRefs} key={item.id}>
+            <Link to={`/works/${item.id}`}>
+              <img src={item.image} alt={item.title} className="service__img" />
+            </Link>
+            <h2>{item.title}</h2>
+            <p>{item.desc}</p>
+            <div className="service__actions">
+              
+              <a href={`/works/${item.id}`}  target="_blank" rel="noreferrer" className="project-link ">
+                <i className="bx bxs-share"></i>
+              </a>
+              <p className="type">{item.type}</p>
+            </div>
+            
+          </div>
+        ))}
       </div>
     </div>
   );
