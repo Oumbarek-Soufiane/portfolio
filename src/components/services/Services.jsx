@@ -80,6 +80,7 @@ const Services = () => {
           <a href="https://github.com/Oumbarek-Soufiane/Aim_App">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">site web</p>
         </div>
 
         <div className="service__offer fade-up" ref={addToRefs}>
@@ -94,6 +95,7 @@ const Services = () => {
           <a href="https://github.com/Oumbarek-Soufiane/School_Elkarama_App" target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">site web</p>
         </div>
 
         <div className="service__offer fade-up" ref={addToRefs}>
@@ -105,6 +107,7 @@ const Services = () => {
           <a href="https://github.com/Oumbarek-Soufiane/project-hackathon" target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">Arduino</p>
         </div>
 
         <div className="service__offer fade-up" ref={addToRefs}>
@@ -114,6 +117,7 @@ const Services = () => {
           <a download="" href={serviceImg4} target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">Illustartion</p>
         </div>
 
         <div className="service__offer fade-up" ref={addToRefs}>
@@ -121,10 +125,11 @@ const Services = () => {
             <img src={serviceImg5} alt="service5" className="service__3" />
           </a>
           <h2>UX / UI Projet</h2>
-          <p> «Projet Plate Forme Musicale ( Figma ) </p>
+          <p> «Projet plateForme de musique avec chat dierct ! ( Figma ) </p>
           <a href="https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2" target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">site web</p>
         </div>
 
 
@@ -133,10 +138,11 @@ const Services = () => {
             <img src={serviceImg6} alt="service5" className="service__3" />
           </a>
           <h2>UX / UI Projet</h2>
-          <p> «Projet Achat Médicament Urgent ( Figma ) </p>
+          <p> «Projet Achat Médicament Urgent En ligne !  ( Figma ) </p>
           <a href="https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22" target="_blank" rel="noreferrer">
             <i className="bx bxs-share"></i>
           </a>
+          <p className="type">application mobile</p>
         </div>
       </div>
     </div>
