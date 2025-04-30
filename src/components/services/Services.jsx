@@ -133,14 +133,14 @@ const Services = () => {
       <div className="service__offers">
         {serviceItems.map((item) => (
           <div className="service__offer fade-up" ref={addToRefs} key={item.id}>
-            <Link to={`/works/${item.id}`}>
+            <Link to={`/works/${item.projectUrl}`}>
               <img src={item.image} alt={item.title} className="service__img" />
             </Link>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <div className="service__actions">
               
-              <a href={`/works/${item.id}`}  target="_blank" rel="noreferrer" className="project-link ">
+              <a href={`/works/${item.projectUrl}`}  target="_blank" rel="noreferrer" className="project-link ">
                 <i className="bx bxs-share"></i>
               </a>
               <p className="type">{item.type}</p>
