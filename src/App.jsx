@@ -27,7 +27,7 @@ const Homepage = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Header />
       <main className='main'>
         <Routes>
