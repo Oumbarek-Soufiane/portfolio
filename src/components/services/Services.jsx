@@ -6,6 +6,7 @@ import serviceImg2 from "../../assets/work3.png";
 import serviceImg4 from "../../assets/work5.png";
 import serviceImg5 from "../../assets/screen.png";
 import serviceImg6 from "../../assets/work6.png"
+import serviceImg7 from "../../assets/brainstrada.png"
 import "./services.css";
 
 const Services = () => {
@@ -110,7 +111,16 @@ const Services = () => {
       desc: "«Projet Achat Médicament Urgent En ligne !  ( Figma )",
       projectUrl: "https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22",
       type: "application mobile"
+    },
+    {
+      id: "7",
+      title: "UX / UI Projet",
+      image: serviceImg7,
+      desc: "«Projet E-leaning  Web Site!  ( Figma )",
+      projectUrl: "https://www.figma.com/proto/H3gw3ZpcEqR7dY9iMsWPuo/Untitled?node-id=1-2&starting-point-node-id=1%3A2",
+      type: "Site Web"
     }
+    
   ];
 
   return (
