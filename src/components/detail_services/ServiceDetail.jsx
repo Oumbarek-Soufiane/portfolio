@@ -17,6 +17,7 @@ import serviceImg2 from "../../assets/work3.png";
 import serviceImg4 from "../../assets/work5.png";
 import serviceImg5 from "../../assets/screen.png";
 import serviceImg6 from "../../assets/work6.png";
+import serviceImg7 from "../../assets/brainstrada.png"
 
 const techIcons = {
   React: <FontAwesomeIcon icon={faReact} />,
@@ -132,6 +133,23 @@ const ServiceDetail = () => {
         "Processus de paiement convivial",
       ],
     },
+    {
+      id: "7",
+      title: "Projet E-leaning  Web Site!  ( Figma )",
+      image: serviceImg7,
+      description:
+        "Brainstrada est une plateforme d’e-learning innovante qui rend l’apprentissage accessible, flexible et engageant. Que vous soyez étudiant, professionnel ou simplement curieux d’apprendre, notre large éventail de cours interactifs vous permet de développer vos compétences à votre propre rythme.",
+      projectUrl:
+        "https://www.figma.com/proto/H3gw3ZpcEqR7dY9iMsWPuo/Untitled?node-id=1-2&starting-point-node-id=1%3A2",
+      technologies: ["Figma"],
+      features: [
+        "Cours variés : Technologie, business, design, développement personnel et bien plus.",
+        "Experts certifiés : Apprenez auprès de formateurs expérimentés et reconnus.",
+        "Accès 24/7 : Formez-vous quand vous voulez, où que vous soyez.",
+        "Parcours personnalisés : Suivez des modules adaptés à vos objectifs.",
+        "Certifications à la clé : Valorisez vos nouvelles compétences sur le marché du travail",
+      ],
+    }
   ];
 
   // Trouver le service sélectionné en fonction du paramètre id

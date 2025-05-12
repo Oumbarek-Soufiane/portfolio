@@ -94,7 +94,7 @@ const Services = () => {
       image: serviceImg4,
       desc: "« Professional Composition Using Adobe Photoshop",
       projectUrl: serviceImg4,
-      type: "Illustartion"
+      type: "Illustration"
     },
     {
       id: "5",
@@ -133,16 +133,17 @@ const Services = () => {
       <div className="service__offers">
         {serviceItems.map((item) => (
           <div className="service__offer fade-up" ref={addToRefs} key={item.id}>
-            <Link to={`${item.projectUrl}`}>
+            <Link to={`/works/${item.id}`}>
               <img src={item.image} alt={item.title} className="service__img" />
             </Link>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <div className="service__actions">
-              
-              <a href={`${item.projectUrl}`}  target="_blank" rel="noreferrer" className="project-link ">
+            
+            <Link to={`/works/${item.id}` } className="project-link ">
                 <i className="bx bxs-share"></i>
-              </a>
+            </Link>
+              
               <p className="type">{item.type}</p>
             </div>
             
