@@ -56,13 +56,13 @@ const Footer = () => {
         
         <ul className="footer__list fade-up" ref={footerLinksRef}>
           <li>
-            <a href="#home" className="footer__link">Home</a>
+            <a href="/portfolio/home" className="footer__link">Home</a>
           </li>
           <li>
-            <a href="#about" className="footer__link">About</a>
+            <a href="/portfolio/about" className="footer__link">About</a>
           </li>
           <li>
-            <a href="#works" className="footer__link">Works</a>
+            <a href="/works" className="footer__link">Works</a>
           </li>
         </ul>
 
