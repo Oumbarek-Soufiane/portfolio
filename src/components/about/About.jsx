@@ -1,6 +1,6 @@
 import {React,useRef,useEffect} from "react";
 import "./about.css";
-import CV from "../../assets/cv_soufiane.pdf";
+import CV from "../../assets/mon_cv.pdf";
 import Info from "./Info";
 const About = () => {
 
@@ -10,7 +10,7 @@ const About = () => {
   const aboutrefinf = useRef(null);
 
   useEffect(() => {
-    // Set up the Intersection Observer
+
     const observerOptions = {
       root: null,
       rootMargin: "0px",
