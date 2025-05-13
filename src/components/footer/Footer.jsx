@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom"; // Utilisation de Link au lieu de <a>
+
+import React, { useEffect, useRef } from "react";
 import "./footer.css";
 
 const Footer = () => {
@@ -7,11 +7,6 @@ const Footer = () => {
   const footerLinksRef = useRef(null);
   const footerSocialRef = useRef(null);
   const footerCopyRef = useRef(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Déterminer le basename pour l'application
-  // Cela peut être configuré dynamiquement en fonction de l'environnement
-  const basename = process.env.PUBLIC_URL || "";
 
   useEffect(() => {
     // Set up the Intersection Observer
@@ -33,11 +28,6 @@ const Footer = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-    // Forcer la visibilité après un court délai
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 500);
 
     // Observe footer elements
     const elements = [
@@ -62,22 +52,21 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="footer__container container">
-        <h1 className={`footer__title fade-up ${isLoaded ? "fade-show" : ""}`} ref={footerTitleRef}>Soufiane</h1>
+        <h1 className="footer__title fade-up" ref={footerTitleRef}>Soufiane</h1>
         
-        <ul className={`footer__list fade-up ${isLoaded ? "fade-show" : ""}`} ref={footerLinksRef}>
+        <ul className="footer__list fade-up" ref={footerLinksRef}>
           <li>
-            {/* Utilisation de Link avec to au lieu de <a href> */}
-            <Link to={`${basename}/`} className="footer__link">Home</Link>
+            <a href="/portfolio/home" className="footer__link">Home</a>
           </li>
           <li>
-            <Link to={`${basename}/about`} className="footer__link">About</Link>
+            <a href="/portfolio/about" className="footer__link">About</a>
           </li>
           <li>
-            <Link to={`${basename}/works`} className="footer__link">Works</Link>
+            <a href="/works" className="footer__link">Works</a>
           </li>
         </ul>
 
-        <div className={`footer__social fade-up ${isLoaded ? "fade-show" : ""}`} ref={footerSocialRef}>
+        <div className="footer__social fade-up" ref={footerSocialRef}>
           <a href="https://www.facebook.com/Sofane.qlf" className="footer__social-icon" target="_blank" rel="noreferrer">
             <i className="bx bxl-facebook"></i>
           </a>
@@ -89,7 +78,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <span className={`footer__copy fade-up ${isLoaded ? "fade-show" : ""}`} ref={footerCopyRef}>
+        <span className="footer__copy fade-up" ref={footerCopyRef}>
           &#169; 2025 Soufiane Oumbarek. All rights reserved
         </span>
       </div>
