@@ -135,7 +135,7 @@ const ServiceDetail = () => {
     },
     {
       id: "7",
-      title: "Projet E-leaning  Web Site!  ( Figma )",
+      title: "Projet E-learning  Web Site!  ( Figma )",
       image: serviceImg7,
       description:
         "Brainstrada est une plateforme d’e-learning innovante qui rend l’apprentissage accessible, flexible et engageant. Que vous soyez étudiant, professionnel ou simplement curieux d’apprendre, notre large éventail de cours interactifs vous permet de développer vos compétences à votre propre rythme.",
