@@ -1,4 +1,4 @@
-import  {React, useState, useEffect, useRef } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
@@ -13,6 +13,7 @@ const Services = () => {
   // Add state for filtering
   const [selectedCategories, setSelectedCategories] = useState(["all"]);
   const [filteredItems, setFilteredItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   const worksRef = useRef(null);
   const serviceItemsRef = useRef([]);
@@ -91,13 +92,15 @@ const Services = () => {
       );
       setFilteredItems(newFilteredItems);
     }
-    console.log(serviceItemsRef.current);
-
   }, [selectedCategories]);
 
   // Initial load of all items
   useEffect(() => {
     setFilteredItems(serviceItems);
+    // Force items to be visible after a short delay
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
   }, []);
 
   // Handle category selection
@@ -114,7 +117,7 @@ const Services = () => {
   };
 
   useEffect(() => {
-    // Set up the Intersection Observer
+    // Set up the Intersection Observer - backup mechanism
     const observerOptions = {
       root: null,
       rootMargin: "0px",
@@ -169,7 +172,7 @@ const Services = () => {
 
   return (
     <div className="works section" id="works">
-      <div className="works__header fade-up" ref={worksRef}>
+      <div className={`works__header fade-up ${isLoaded ? "fade-show" : ""}`} ref={worksRef}>
         <h2 className="section__title">Works</h2>
         <span className="section__subtitle">What I realise</span>
       </div>
@@ -193,7 +196,12 @@ const Services = () => {
 
       <div className="service__offers">
         {filteredItems.map((item) => (
-          <div className="service__offer fade-up" ref={addToRefs} key={item.id}>
+          <div 
+            className={`service__offer fade-up ${isLoaded ? "fade-show" : ""}`} 
+            ref={addToRefs} 
+            key={item.id}
+            style={{ opacity: isLoaded ? 1 : 0, transform: isLoaded ? "translateY(0)" : "translateY(20px)" }}
+          >
             <Link to={`/works/${item.id}`}>
               <img src={item.image} alt={item.title} className="service__img" />
             </Link>
@@ -220,4 +228,3 @@ const Services = () => {
 };
 
 export default Services;
-
