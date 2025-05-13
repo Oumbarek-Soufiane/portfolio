@@ -39,42 +39,42 @@ const Header = () => {
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
-              <NavLink to="/portfolio" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}/`} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-estate nav__icon"></i>
                 Home
               </NavLink>
             </li>
 
             <li className="nav__item">
-              <NavLink to="/about" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}`/about} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-user nav__icon"></i>
                 About
               </NavLink>
             </li>
 
             <li className="nav__item">
-              <NavLink to="/skills" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}`/skills} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-file-alt nav__icon"></i>
                 Skills
               </NavLink>
             </li>
 
             <li className="nav__item">
-              <NavLink to="/works" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}`/works} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-briefcase-alt nav__icon"></i>
                 Works
               </NavLink>
             </li>
 
             <li className="nav__item">
-              <NavLink to="/qualification" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}`/qualification} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-award nav__icon"></i>
                 Qualification
               </NavLink>
             </li>
 
             <li className="nav__item">
-              <NavLink to="/contact" className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
+              <NavLink to={`${basename}`/contact} className={({isActive}) => isActive ? "nav__link active-link" : "nav__link"} onClick={closeMenu}>
                 <i className="uil uil-message nav__icon"></i>
                 Contact
               </NavLink>
