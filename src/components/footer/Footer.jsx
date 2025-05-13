@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import "./footer.css";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const footerTitleRef = useRef(null);
@@ -56,13 +57,15 @@ const Footer = () => {
         
         <ul className="footer__list fade-up" ref={footerLinksRef}>
           <li>
-            <a href="/portfolio/home" className="footer__link">Home</a>
+             <NavLink to="/qualification" className="footer__link">
+             Home
+             </NavLink>
           </li>
           <li>
-            <a href="/portfolio/about" className="footer__link">About</a>
+            <NavLink to="/about" className="footer__link">About </NavLink>
           </li>
           <li>
-            <a href="/works" className="footer__link">Works</a>
+            <NavLink to="/works" className="footer__link">Works </NavLink>
           </li>
         </ul>
 
