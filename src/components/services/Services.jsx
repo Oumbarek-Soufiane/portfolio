@@ -91,6 +91,8 @@ const Services = () => {
       );
       setFilteredItems(newFilteredItems);
     }
+    console.log(serviceItemsRef.current);
+
   }, [selectedCategories]);
 
   // Initial load of all items

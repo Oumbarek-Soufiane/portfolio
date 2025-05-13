@@ -81,8 +81,8 @@
 }
 
 .service__offer.fade-show {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Add these animation styles to your services.css file */
