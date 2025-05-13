@@ -57,7 +57,7 @@ const Footer = () => {
         
         <ul className="footer__list fade-up" ref={footerLinksRef}>
           <li>
-             <NavLink to="/qualification" className="footer__link">
+             <NavLink to="/" className="footer__link">
              Home
              </NavLink>
           </li>
