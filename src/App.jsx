@@ -1,52 +1,37 @@
 import React from 'react';
-import './App.css';
-import Header from './components/header/header';
-import Home from './components/home/home';
-import Skills from "./components/skill/Skills";
-import About from "./components/about/About";
-import Services from "./components/services/Services";
-import ServiceDetail from "./components/detail_services/ServiceDetail";
-import Qualifications from './components/qualification/Qualifications';
-import Contact from './components/contact/Contact';
+import { HashRouter, BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './components/home/Home'; // Assurez-vous que ces imports sont corrects
+import About from './components/about/About';
+import Services from './components/services/Services';
+import WorkDetail from './components/workdetail/WorkDetail';
+import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
-// Composant qui regroupe toutes les sections pour la page d'accueil
-const Homepage = () => {
-  return (
-    <>
-      <Home />
-      <About />
-      <Skills />
-      <Services />
-      <Qualifications />
-      <Contact />
-    </>
-  );
-};
+import './App.css';
 
 function App() {
+  // Déterminer si nous devons utiliser HashRouter ou BrowserRouter
+  // HashRouter est recommandé pour GitHub Pages
+  const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter;
+  
+  // Déterminer le basename pour les routes
+  const basename = process.env.PUBLIC_URL || '';
+
   return (
-    <Router basename="/">
-      <Header />
-      <main className='main'>
+    <Router basename={basename}>
+      <div className="App">
+        <Header />
+        
         <Routes>
-          {/* Redirection de la racine vers /portfolio */}
-          <Route path="/" element={<Navigate to="/portfolio" replace />} />
-          
-          {/* Page d'accueil avec toutes les sections */}
-          <Route path="/portfolio" element={<Homepage />} />
-          
-          {/* Pages individuelles pour chaque section */}
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
           <Route path="/works" element={<Services />} />
-          <Route path="/works/:id" element={<ServiceDetail />} />
-          <Route path="/qualification" element={<Qualifications />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/works/:id" element={<WorkDetail />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </main>
-      <Footer />
+        
+        <Footer />
+      </div>
     </Router>
   );
 }
