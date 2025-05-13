@@ -85,7 +85,10 @@ const Contact = () => {
               <i class="fa-brands fa-whatsapp"></i>
             </div>
             <div>
-              <p className="contact__title">Whatssap</p>
+              <p className="contact__title">Whatssap Business</p>
+            </div>
+             <div>
+              <p>+212652608908</p>
             </div>
             <div>
               <a href="https://api.whatssap.com/send?phone=+212652608908&text=Hello, more information!" className="contact__button " href="">
