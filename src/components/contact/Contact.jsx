@@ -88,7 +88,7 @@ const Contact = () => {
               <p className="contact__title">Whatssap Business</p>
             </div>
              <div>
-              <p>+212652608908</p>
+              <p>+212 652608908</p>
             </div>
             <div>
               <a href="https://api.whatssap.com/send?phone=+212652608908&text=Hello, more information!" className="contact__button " href="">

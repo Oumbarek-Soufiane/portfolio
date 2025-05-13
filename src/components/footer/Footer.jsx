@@ -70,9 +70,7 @@ const Footer = () => {
         </ul>
 
         <div className="footer__social fade-up" ref={footerSocialRef}>
-          <a href="https://www.facebook.com/Sofane.qlf" className="footer__social-icon" target="_blank" rel="noreferrer">
-            <i className="bx bxl-facebook"></i>
-          </a>
+         
           <a href="https://www.instagram.com/no_chorus2/#s" className="footer__social-icon" target="_blank" rel="noreferrer">
             <i className="bx bxl-instagram"></i>
           </a>
