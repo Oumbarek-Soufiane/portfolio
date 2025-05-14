@@ -44,16 +44,9 @@ const Services = () => {
       projectUrl: "https://github.com/Oumbarek-Soufiane/project-hackathon",
       type: "arduino"
     },
+   
     {
       id: "4",
-      title: "Chefchaoun Project",
-      image: serviceImg4,
-      desc: "« Professional Composition Using Adobe Photoshop",
-      projectUrl: serviceImg4,
-      type: "illustration"
-    },
-    {
-      id: "5",
       title: "UX / UI Projet",
       image: serviceImg5,
       desc: "«Projet plateForme de musique avec chat dierct ! ( Figma )",
@@ -61,7 +54,7 @@ const Services = () => {
       type: "ux/ui design"
     },
     {
-      id: "6",
+      id: "5",
       title: "UX / UI Projet",
       image: serviceImg6,
       desc: "«Projet Achat Médicament Urgent En ligne !  ( Figma )",
@@ -69,7 +62,7 @@ const Services = () => {
       type: "ux/ui design"
     },
     {
-      id: "7",
+      id: "6",
       title: "UX / UI Projet",
       image: serviceImg7,
       desc: "«Projet E-learning  Web Site!  ( Figma )",
@@ -79,7 +72,7 @@ const Services = () => {
   ];
 
   // Get unique categories for filtering - specified exact categories to ensure consistent naming
-  const categoryList = ["arduino", "web development", "ux/ui design", "illustration"];
+  const categoryList = ["arduino", "web development", "ux/ui design"];
   const categories = ["all", ...categoryList];
 
   // Filter items based on selected categories
