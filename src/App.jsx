@@ -9,7 +9,7 @@ import ServiceDetail from "./components/detail_services/ServiceDetail";
 import Qualifications from './components/qualification/Qualifications';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 // Composant qui regroupe toutes les sections pour la page d'accueil
 const Homepage = () => {
@@ -27,7 +27,7 @@ const Homepage = () => {
 
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <Header />
       <main className='main'>
         <Routes>

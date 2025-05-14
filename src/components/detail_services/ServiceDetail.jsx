@@ -14,7 +14,6 @@ import "./detail.css";
 import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
-import serviceImg4 from "../../assets/work5.png";
 import serviceImg5 from "../../assets/screen.png";
 import serviceImg6 from "../../assets/work6.png";
 import serviceImg7 from "../../assets/brainstrada.png"
