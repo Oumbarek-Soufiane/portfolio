@@ -83,24 +83,9 @@ const ServiceDetail = () => {
         "Surveillance de la température et de l'humidité pour détecter les taux de décomposition",
       ],
     },
+    
     {
       id: "4",
-      title: "Projet Chefchaouen",
-      image: serviceImg4,
-      description:
-        "Une composition numérique professionnelle mettant en valeur la magnifique ville bleue de Chefchaouen, au Maroc. Ce projet artistique combine des techniques de photographie et de manipulation numérique dans Adobe Photoshop pour créer une représentation visuelle saisissante du caractère unique et de l'ambiance de la ville.",
-      projectUrl: "#",
-      technologies: ["Adobe Photoshop"],
-      features: [
-        "Image haute résolution adaptée à l'impression grand format",
-        "Étalonnage soigneux des couleurs pour mettre en valeur les tons bleus célèbres de Chefchaouen",
-        "Plusieurs éléments superposés pour la profondeur et la dimension",
-        "Composition équilibrée attirant l'attention sur les caractéristiques architecturales",
-        "Disponible en plusieurs formats pour différentes applications",
-      ],
-    },
-    {
-      id: "5",
       title: "Plateforme de Musique avec Chat en Direct - Projet UX/UI",
       image: serviceImg5,
       description:
@@ -117,7 +102,7 @@ const ServiceDetail = () => {
       ],
     },
     {
-      id: "6",
+      id: "5",
       title: "Achat de Médicaments Urgents - Application Mobile",
       image: serviceImg6,
       description:
@@ -134,7 +119,7 @@ const ServiceDetail = () => {
       ],
     },
     {
-      id: "7",
+      id: "6",
       title: "Projet E-learning  Web Site!  ( Figma )",
       image: serviceImg7,
       description:
