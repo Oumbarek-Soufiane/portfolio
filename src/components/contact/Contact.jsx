@@ -19,26 +19,109 @@ const SuccessAlert = ({ show }) => {
   );
 };
 
+// Create an error alert component
+const ErrorAlert = ({ message, show }) => {
+  if (!show) return null;
+  
+  return (
+    <div className="error-alert">
+      <div className="error-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+      </div>
+      <div className="error-message">{message}</div>
+    </div>
+  );
+};
+
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState({ show: false, message: '' });
   const conatctTitleRef = useRef(null);
   const contactsubtitleRef = useRef(null);
   const contactlinksRef = useRef(null);
   
+  // List of allowed email domains
+  const allowedDomains = [
+    'gmail.com',
+    'hotmail.com',
+    'outlook.com',
+    'yahoo.com',
+    'icloud.com',
+    'aol.com',
+    'protonmail.com',
+    'mail.com',
+    'zoho.com',
+    'live.com',
+    'msn.com',
+    'gmx.com'
+  ];
+  
+  // Email validation function
+  const validateEmail = (email) => {
+    if (!email) return false;
+    
+    // Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError({
+        show: true,
+        message: 'Please enter a valid email address'
+      });
+      return false;
+    }
+    
+    // Domain validation
+    const domain = email.split('@')[1].toLowerCase();
+    if (!allowedDomains.includes(domain)) {
+      setEmailError({
+        show: true,
+        message: 'Please use a common email provider (Gmail, Hotmail, Outlook, etc.)'
+      });
+      return false;
+    }
+    
+    // Clear any previous errors
+    setEmailError({ show: false, message: '' });
+    return true;
+  };
+  
   const sendEmail = (e) => {
     e.preventDefault();
+    
+    const emailInput = e.target.elements.email.value;
+    
+    // Validate email before sending
+    if (!validateEmail(emailInput)) {
+      return;
+    }
+    
     emailjs.sendForm('service_hkua95m','template_6kdp65e',e.target,'rtqr-ns5mzP3qMk2p')
       .then((result) => {
         setFormSubmitted(true);
         e.target.reset();
-        // Hide the success message after 5 seconds
         setTimeout(() => {
           setFormSubmitted(false);
         }, 5000);
       }, (error) => {
         console.log(error.text);
+        setEmailError({
+          show: true,
+          message: 'Failed to send message. Please try again later.'
+        });
       });
   }
+
+  // Handle email input change to provide real-time validation
+  const handleEmailChange = (e) => {
+    // Clear error when user starts typing again
+    if (emailError.show) {
+      setEmailError({ show: false, message: '' });
+    }
+  };
   
   useEffect(() => {
     // Set up the Intersection Observer
@@ -131,6 +214,9 @@ const Contact = () => {
             <div className={`alert-container ${formSubmitted ? 'show' : ''}`}>
               <SuccessAlert show={formSubmitted} />
             </div>
+            <div className={`alert-container ${emailError.show ? 'show' : ''}`}>
+              <ErrorAlert show={emailError.show} message={emailError.message} />
+            </div>
             <form className="contact__form" onSubmit={sendEmail}>
               <div className="contact__form-div">
                 <label htmlFor="contact__form-tag">Name</label>
@@ -149,9 +235,11 @@ const Contact = () => {
                   type="email" 
                   name="email" 
                   className="contact__form-input"
-                  placeholder="Insert your email"
+                  placeholder="Insert your email (Gmail, Outlook, etc.)"
+                  onChange={handleEmailChange}
                   required
                 />
+                
               </div>
 
               <div className="contact__form-div contact__form-area">
@@ -192,6 +280,34 @@ const Contact = () => {
           animation: fadeIn 0.3s ease-in-out forwards;
         }
         
+        .error-alert {
+          display: flex;
+          align-items: center;
+          background-color: #f8d7da;
+          color: #721c24;
+          padding: 12px 16px;
+          border-radius: 4px;
+          margin-bottom: 16px;
+          border-left: 4px solid #dc3545;
+          opacity: 0;
+          transform: translateY(-20px);
+          animation: fadeIn 0.3s ease-in-out forwards;
+        }
+        
+        .error-icon {
+          color: #dc3545;
+          margin-right: 12px;
+          display: flex;
+          align-items: center;
+        }
+        
+        .input-error-message {
+          color: #dc3545;
+          font-size: 12px;
+          margin-top: 4px;
+          font-weight: 500;
+        }
+        
         @keyframes fadeIn {
           to {
             opacity: 1;
@@ -215,7 +331,7 @@ const Contact = () => {
           align-items: center;
         }
         
-        .success-message {
+        .success-message, .error-message {
           font-weight: 500;
         }
       `}</style>
