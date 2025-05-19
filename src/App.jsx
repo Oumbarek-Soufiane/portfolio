@@ -9,12 +9,14 @@ import ServiceDetail from "./components/detail_services/ServiceDetail";
 import Qualifications from './components/qualification/Qualifications';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import ScrollProgressBar from './components/scrollBar/ScrollProgressBar';
 import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 // Composant qui regroupe toutes les sections pour la page d'accueil
 const Homepage = () => {
   return (
     <>
+   
       <Home />
       <About />
       <Skills />
@@ -27,8 +29,10 @@ const Homepage = () => {
 
 function App() {
   return (
+    
     <Router>
       <Header />
+        <ScrollProgressBar />
       <main className='main'>
         <Routes>
           {/* Redirection de la racine vers /portfolio */}

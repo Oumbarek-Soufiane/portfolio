@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "./contact.css";
+import ScrollToTop from '../scrollToTop/ScrollToTop'
 import emailjs from '@emailjs/browser';
 
 // Create a simple custom alert component instead of using Material UI
@@ -264,6 +265,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+         <ScrollToTop />
       </section>
       <style jsx>{`
         .success-alert {
