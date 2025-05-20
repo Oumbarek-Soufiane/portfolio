@@ -14,3 +14,10 @@
   width: 0;
   transition: width 0.3s ease-out;
 }
+
+
+  @media screen and (max-width: 768px) {
+       .scroll-progress-container {
+        top: 87.8%;
+        }
+    }   
