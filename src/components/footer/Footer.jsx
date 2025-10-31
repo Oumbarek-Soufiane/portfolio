@@ -2,7 +2,11 @@
 import React, { useEffect, useRef } from "react";
 import "./footer.css";
 import { NavLink } from "react-router-dom";
+const IPAdress = () =>{
+  const [ip,setIP] = useState('');
 
+  
+}
 const Footer = () => {
   const footerTitleRef = useRef(null);
   const footerLinksRef = useRef(null);
