@@ -16,7 +16,11 @@ import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
 import serviceImg5 from "../../assets/screen.png";
 import serviceImg6 from "../../assets/work6.png";
+import serviceImg3 from "../../assets/work7.png";
 import serviceImg7 from "../../assets/brainstrada.png"
+import serviceImg8 from "../../assets/beauty_app.mp4"
+import serviceImg9 from "../../assets/amtic_vid.mp4"
+import serviceImg10 from "../../assets/vape_stopper.mp4"
 
 const techIcons = {
   React: <FontAwesomeIcon icon={faReact} />,
@@ -26,6 +30,8 @@ const techIcons = {
   "C++": <FontAwesomeIcon icon={faCogs} />,
   Figma: <SiFigma />,
   "Adobe Photoshop": <FontAwesomeIcon icon={faPaintBrush} />,
+  "Node js": <i class="fa-brands fa-node-js"></i>,
+  "js": <img width="20" height="20" src="https://img.icons8.com/ios/50/express-js.png" alt="express-js" />
 };
 
 const ServiceDetail = () => {
@@ -82,7 +88,7 @@ const ServiceDetail = () => {
         "Surveillance de la température et de l'humidité pour détecter les taux de décomposition",
       ],
     },
-    
+
     {
       id: "4",
       title: "Plateforme de Musique avec Chat en Direct - Projet UX/UI",
@@ -133,6 +139,80 @@ const ServiceDetail = () => {
         "Parcours personnalisés : Suivez des modules adaptés à vos objectifs.",
         "Certifications à la clé : Valorisez vos nouvelles compétences sur le marché du travail",
       ],
+    },
+    {
+      id: "7",
+      title: "Google Chrome Extension Nudity & Violence Detection",
+      image: serviceImg3,
+      description:
+        "«A Chrome extension that uses AI to detect and block nudity and violent content in real time.",
+      projectUrl:
+        "https://github.com/Oumbarek-Soufiane/nudity-violence_detection_extenstion",
+      technologies: ["React", "js", "Node js"],
+      features: [
+        "Détection en temps réel : Analyse automatique des images et vidéos pendant la navigation.",
+        "IA Google Gemini : Propulsée par Google Gemini API (Slash 3 Preview) pour une détection fiable.",
+        "Protection du contenu : Bloque ou signale les contenus violents et explicites.",
+        "Navigation sécurisée : Idéal pour le travail, les enfants et les environnements éducatifs.",
+        "Respect de la vie privée : Aucune donnée personnelle n’est stockée ou partagée.",
+      ]
+    },
+    {
+      id: "8",
+      title: "Beauty & Wellness Booking Platform (Mobile App)",
+      image : serviceImg8,
+      description: "A comprehensive mobile solution connecting users with top-rated stylists and spas...",
+      projectUrl: "https://www.figma.com/proto/dDLl8TCZ4LMG6V2NWUWixg/beaut%C3%A9-naturel?node-id=190-38&t=WHKheML1rNSn72X1-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A226&show-proto-sidebar=1",
+      technologies: ["Figma"],
+      features: [
+        "User-Centric Booking Flow...",
+        "Comprehensive Design System...",
+        "Interactive Prototyping...",
+        "Visual Hierarchy...",
+        "Accessibility Focused..."
+      ],
+      // 👇 CHANGE 1: Match the condition in your JSX
+      mediaType: "video",
+      // 👇 CHANGE 2: Add the source your JSX expects
+      videoUrl: serviceImg8
+    },
+    {
+      id: "9",
+      title: "Social Link Hub Platform (UI/UX Design)",
+      image: serviceImg9,
+      description: "A high-fidelity design concept for a bio-link tool, focusing on deep customization workflows and dashboard visualization.",
+      projectUrl: "https://www.figma.com/proto/okS74bl7ZMUyY3GrXUuiXH/linkpro?node-id=1-2&p=f&t=T8mf8MOTtY5eTiiU-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+      technologies: ["Figma"],
+      features: [
+        "Modular Design System: Built using atomic design principles with reusable components for buttons, cards, and inputs.",
+        "Interactive Customization Flow: specific prototyping showing how users drag-and-drop elements to reorganize their page.",
+        "Analytics Dashboard UI: A clean, data-rich visual layout designed to display click-through rates and audience insights.",
+        "Theme Variation: High-fidelity mockups showcasing the interface in both Dark and Light modes.",
+        "Responsive Layout: Auto-layout frames ensuring the design adapts perfectly across mobile and desktop viewports."
+      ],
+      // 👇 CHANGE 1: Triggers the video tag
+      mediaType: "video", 
+      // 👇 CHANGE 2: Your video source (the Figma recording)
+      videoUrl: serviceImg9 
+    },
+   {
+      id: "10",
+      title: "Vape Stopper App (UI/UX Design)",
+      image: serviceImg10,
+      description: "A supportive mobile application design helping users overcome vaping addiction through habit tracking, health visualization, and community support.",
+      projectUrl: "https://www.figma.com/proto/dDLl8TCZ4LMG6V2NWUWixg/beaut%C3%A9-naturel?node-id=1399-1063&t=NoOIlKPAicBloas1-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1399%3A1063&show-proto-sidebar=1",
+      technologies: ["Figma"],
+      features: [
+        "Motivational Dashboard: A central hub design visualizing current streaks, money saved, and health milestones.",
+        "Panic Button Interaction: A 'Craving SOS' flow featuring breathing exercises and distraction techniques.",
+        "Health Timeline UI: Illustrative graphics showing the body's physical recovery stages over time.",
+        "Community Feed Layout: A safe, anonymous social interface for peer support and success stories.",
+        "Smart Notifications: Prototyped push notification logic for daily check-ins and achievement alerts."
+      ],
+      // 👇 CHANGE 1: Triggers the video tag
+      mediaType: "video", 
+      // 👇 CHANGE 2: Your video source (the Figma recording)
+      videoUrl: serviceImg10 
     }
   ];
 
@@ -163,11 +243,31 @@ const ServiceDetail = () => {
         <h1 className="service-detail-title">{selectedService.title}</h1>
 
         <div className="service-detail-image-container">
-          <img
-            src={selectedService.image}
-            alt={selectedService.title}
-            className="service-detail-image"
-          />
+          {selectedService.mediaType === "video" ? (
+            <video
+              src={selectedService.videoUrl}
+              className="service-detail-image"
+              poster={selectedService.image} 
+               style={{
+                    width: "100%",
+                    height: "600px", // Adjust this value
+                  
+                  }}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={selectedService.image}
+              alt={selectedService.title}
+              className="service-detail-image"
+            />
+          )}
         </div>
 
         <div className="service-detail-description">
@@ -212,7 +312,7 @@ const ServiceDetail = () => {
                 href={selectedService.image}
                 download={`Chefchaouen_Project_${selectedService.id}.jpg`}
                 className="download-button view-project-button"
-                
+
               >
                 Télécharger l'Image
               </a>

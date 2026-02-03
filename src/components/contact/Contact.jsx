@@ -100,7 +100,7 @@ const Contact = () => {
       return;
     }
     
-    emailjs.sendForm('service_hkua95m','template_6kdp65e',e.target,'rtqr-ns5mzP3qMk2p')
+    emailjs.sendForm('service_dlp03ej','template_vw8x9ee',e.target,'VP3F5AB8GHDS_KyGglBMW')
       .then((result) => {
         setFormSubmitted(true);
         e.target.reset();

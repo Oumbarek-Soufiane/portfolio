@@ -177,6 +177,8 @@ img {
 
 
 
+
+
 [data-theme="dark"] {
   --title-color: hsl(var(--hue), var(--sat), 95%);
   --title-color-dark: hsl(var(--hue), var(--sat), 100%);

@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import serviceImg from "../../assets/work1.png";
 import serviceImg1 from "../../assets/work2.png";
 import serviceImg2 from "../../assets/work3.png";
+import serviceImg3 from "../../assets/work7.png";
 import serviceImg4 from "../../assets/work5.png";
 import serviceImg5 from "../../assets/screen.png";
 import serviceImg6 from "../../assets/work6.png";
+import serviceImg8 from "../../assets/beauty_app.mp4"
+import serviceImg9 from "../../assets/amtic_vid.mp4"
+import serviceImg10 from "../../assets/vape_stopper.mp4"
 import serviceImg7 from "../../assets/brainstrada.png";
 import "./services.css";
 
@@ -14,7 +18,7 @@ const Services = () => {
   const [selectedCategories, setSelectedCategories] = useState(["all"]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   const worksRef = useRef(null);
   const serviceItemsRef = useRef([]);
 
@@ -26,7 +30,8 @@ const Services = () => {
       image: serviceImg,
       desc: "«Institution Academic Connect: Your Gateway to Creativity and Innovation",
       projectUrl: "https://github.com/Oumbarek-Soufiane/Aim_App",
-      type: "web development"
+      type: "web development",
+      isVideo: false // This is a standard image
     },
     {
       id: "2",
@@ -34,7 +39,17 @@ const Services = () => {
       image: serviceImg1,
       desc: "«Institution Academic Connect: Your Gateway to Creativity and Innovation El karama Boussaid",
       projectUrl: "https://github.com/Oumbarek-Soufiane/School_Elkarama_App",
-      type: "web development"
+      type: "web development",
+      isVideo: false // This is a standard image
+    },
+    {
+      id: "7",
+      title: "Nudity & Violence Detection ",
+      image: serviceImg3,
+      desc: "«A Chrome extension that uses AI to detect and block nudity and violent content in real time.",
+      projectUrl: "https://github.com/Oumbarek-Soufiane/nudity-violence_detection_extenstion",
+      type: "AI / web developement",
+      isVideo: false // This is a standard image
     },
     {
       id: "3",
@@ -42,16 +57,18 @@ const Services = () => {
       image: serviceImg2,
       desc: "«Smart Garbage Using Arduino And C++ Language",
       projectUrl: "https://github.com/Oumbarek-Soufiane/project-hackathon",
-      type: "arduino"
+      type: "arduino",
+      isVideo: false // This is a standard image
     },
-   
+
     {
       id: "4",
       title: "UX / UI Projet",
       image: serviceImg5,
       desc: "«Projet plateForme de musique avec chat dierct ! ( Figma )",
       projectUrl: "https://www.figma.com/proto/CsG3AGJGc5ZykHu2tZwkYP/projet-ux-ui?node-id=2-2",
-      type: "ux/ui design"
+      type: "ux/ui design",
+      isVideo: false // This is a standard image
     },
     {
       id: "5",
@@ -59,7 +76,8 @@ const Services = () => {
       image: serviceImg6,
       desc: "«Projet Achat Médicament Urgent En ligne !  ( Figma )",
       projectUrl: "https://www.figma.com/proto/mhfgfgtMcv3uRBvZeRPb9J/app-gestion-urgents?node-id=19-22&p=f&t=g5VlE8ip5QL93dN0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A22",
-      type: "ux/ui design"
+      type: "ux/ui design",
+      isVideo: false // This is a standard image
     },
     {
       id: "6",
@@ -67,12 +85,40 @@ const Services = () => {
       image: serviceImg7,
       desc: "«Projet E-learning  Web Site!  ( Figma )",
       projectUrl: "https://www.figma.com/proto/H3gw3ZpcEqR7dY9iMsWPuo/Untitled?node-id=1-2&starting-point-node-id=1%3A2",
-      type: "ux/ui design"
+      type: "ux/ui design",
+      isVideo: false // This is a standard image
+    },
+    {
+      id: "8",
+      title: "UX / UI Projet",
+      image: serviceImg8,
+      desc: "«Beauty & Wellness Booking Platform (Mobile App)",
+      projectUrl: "https://www.figma.com/proto/dDLl8TCZ4LMG6V2NWUWixg/beaut%C3%A9-naturel?node-id=190-38&t=WHKheML1rNSn72X1-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A226&show-proto-sidebar=1",
+      type: "ux/ui design",
+      isVideo: true // This is a video
+    },
+     {
+      id: "9",
+      title: "UX / UI Projet",
+      image: serviceImg9,
+      desc: "Social Link Hub platform ( AMTIC Agency )",
+      projectUrl: "https://www.figma.com/proto/okS74bl7ZMUyY3GrXUuiXH/linkpro?node-id=1-2&p=f&t=T8mf8MOTtY5eTiiU-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+      type: "ux/ui design",
+      isVideo: true // This is a video
+    },
+     {
+      id: "10",
+      title: "UX / UI Projet",
+      image: serviceImg10,
+      desc: "«VapeStopper: Design for Habit Reformation (Mobile App)",
+      projectUrl: "https://www.figma.com/proto/dDLl8TCZ4LMG6V2NWUWixg/beaut%C3%A9-naturel?node-id=1399-1063&t=NoOIlKPAicBloas1-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1399%3A1063&show-proto-sidebar=1",
+      type: "ux/ui design",
+      isVideo: true // This is a video
     }
   ];
 
   // Get unique categories for filtering - specified exact categories to ensure consistent naming
-  const categoryList = ["arduino", "web development", "ux/ui design"];
+  const categoryList = ["arduino", "web development", "ux/ui design", "ai / web developement"];
   const categories = ["all", ...categoryList];
 
   // Filter items based on selected categories
@@ -80,7 +126,7 @@ const Services = () => {
     if (selectedCategories.includes("all")) {
       setFilteredItems(serviceItems);
     } else {
-      const newFilteredItems = serviceItems.filter(item => 
+      const newFilteredItems = serviceItems.filter(item =>
         selectedCategories.includes(item.type.toLowerCase())
       );
       setFilteredItems(newFilteredItems);
@@ -104,7 +150,7 @@ const Services = () => {
       const newSelectedCategories = selectedCategories.includes(category)
         ? selectedCategories.filter(c => c !== category)
         : [...selectedCategories.filter(c => c !== "all"), category];
-      
+
       setSelectedCategories(newSelectedCategories.length ? newSelectedCategories : ["all"]);
     }
   };
@@ -137,7 +183,7 @@ const Services = () => {
 
     // Reset the refs array when filtered items change
     serviceItemsRef.current = [];
-    
+
     // Re-observe each service offer after filtering
     setTimeout(() => {
       serviceItemsRef.current.forEach((item) => {
@@ -177,9 +223,8 @@ const Services = () => {
             <button
               key={category}
               onClick={() => handleCategoryClick(category)}
-              className={`filter-btn ${
-                selectedCategories.includes(category) ? "active" : ""
-              }`}
+              className={`filter-btn ${selectedCategories.includes(category) ? "active" : ""
+                }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
@@ -189,17 +234,41 @@ const Services = () => {
 
       <div className="service__offers">
         {filteredItems.map((item) => (
-          <div 
-            className={`service__offer fade-up ${isLoaded ? "fade-show" : ""}`} 
-            ref={addToRefs} 
+          <div
+            className={`service__offer fade-up ${isLoaded ? "fade-show" : ""}`}
+            ref={addToRefs}
             key={item.id}
-            style={{ opacity: isLoaded ? 1 : 0, transform: isLoaded ? "translateY(0)" : "translateY(20px)" }}
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transform: isLoaded ? "translateY(0)" : "translateY(20px)",
+            }}
           >
             <Link to={`/works/${item.id}`}>
-              <img src={item.image} alt={item.title} className="service__img" />
+              {/* Conditional Rendering Logic Starts Here */}
+              {item.isVideo ? (
+                <video
+                  src={item.image}
+                  className="service__img "
+                  style={{
+                    width: "100%",
+                    height: "200px", // Adjust this value
+                  
+                  }}
+                  muted
+                  loop
+                  onMouseOver={(e) => e.target.play()} // Optional: Play on hover
+                  onMouseOut={(e) => e.target.pause()} // Optional: Pause on leave
+                // controls // Uncomment if you want standard video controls
+                />
+              ) : (
+                <img src={item.image} alt={item.title} className="service__img" />
+              )}
+              {/* Conditional Rendering Logic Ends Here */}
             </Link>
+
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
+
             <div className="service__actions">
               <Link to={`/works/${item.id}`} className="project-link">
                 <i className="bx bxs-share"></i>
