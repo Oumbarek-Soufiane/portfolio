@@ -47,6 +47,7 @@ function Home() {
         <div className="hero">
           <div className="social">
             <a href="https://github.com/Oumbarek-Soufiane" target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
+            <a href="https://www.linkedin.com/in/oumbarek-soufiane/" target="_blank" rel="noopener" aria-label="LinkedIn"><Icon name="linkedin" /></a>
             <a href="#contact" aria-label="Email"><Icon name="mail" /></a>
             <a href="#contact" aria-label="WhatsApp"><Icon name="chat" /></a>
           </div>
@@ -234,6 +235,7 @@ function Contact() {
               <div className="ccard"><Icon name="mail" /><b>Email</b><span className="v">{EMAIL}</span><button onClick={copy}>{copied ? 'Copied ✓' : 'Copy email →'}</button></div>
               <div className="ccard"><Icon name="chat" /><b>WhatsApp / Phone</b><span className="v">+212 652 608 908</span><a className="w" href="https://wa.me/212652608908" target="_blank" rel="noopener">Write me →</a></div>
               <div className="ccard"><Icon name="github" /><b>GitHub</b><span className="v">github.com/Oumbarek-Soufiane</span><a className="w" href="https://github.com/Oumbarek-Soufiane" target="_blank" rel="noopener">View profile →</a></div>
+              <div className="ccard"><Icon name="linkedin" /><b>LinkedIn</b><span className="v">linkedin.com/in/oumbarek-soufiane</span><a className="w" href="https://www.linkedin.com/in/oumbarek-soufiane/" target="_blank" rel="noopener">Connect →</a></div>
             </div>
           </div>
           <div>
