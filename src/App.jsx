@@ -46,7 +46,7 @@ function Home() {
       <div className="wrap">
         <div className="hero">
           <div className="social">
-            <a href="https://github.com/SoufianeOumbarek" target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
+            <a href="https://github.com/Oumbarek-Soufiane" target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
             <a href="#contact" aria-label="Email"><Icon name="mail" /></a>
             <a href="#contact" aria-label="WhatsApp"><Icon name="chat" /></a>
           </div>
@@ -233,7 +233,7 @@ function Contact() {
             <div className="ccards">
               <div className="ccard"><Icon name="mail" /><b>Email</b><span className="v">{EMAIL}</span><button onClick={copy}>{copied ? 'Copied ✓' : 'Copy email →'}</button></div>
               <div className="ccard"><Icon name="chat" /><b>WhatsApp / Phone</b><span className="v">+212 652 608 908</span><a className="w" href="https://wa.me/212652608908" target="_blank" rel="noopener">Write me →</a></div>
-              <div className="ccard"><Icon name="github" /><b>GitHub</b><span className="v">github.com/SoufianeOumbarek</span><a className="w" href="https://github.com/SoufianeOumbarek" target="_blank" rel="noopener">View profile →</a></div>
+              <div className="ccard"><Icon name="github" /><b>GitHub</b><span className="v">github.com/Oumbarek-Soufiane</span><a className="w" href="https://github.com/Oumbarek-Soufiane" target="_blank" rel="noopener">View profile →</a></div>
             </div>
           </div>
           <div>
