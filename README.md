@@ -1,8 +1,20 @@
-# React + Vite
+# Soufiane Oumbarek — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite portfolio with light/dark mode and six case studies
+(RaceTimer, FashionFlow, SafeSurf, BrainStrada, NotaFlow, GST-CS).
 
-Currently, two official plugins are available:
+Live: https://oumbarek-soufiane.github.io/portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Develop
+    npm install
+    npm run dev
+
+## Deploy to GitHub Pages
+    npm run deploy      # builds and publishes dist/ to the gh-pages branch
+
+## Where to edit
+- `src/data/projects.js` — all case studies (text, images, chapters)
+- `src/App.jsx` — Home, About, Skills, Works, Qualification, Contact
+- `src/styles.css` — colours, fonts, light/dark mode
+- `public/assets/` — images and videos
+- `public/Soufiane_Oumbarek_CV.pdf` — the CV behind "Download CV"
